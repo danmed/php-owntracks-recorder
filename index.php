@@ -278,12 +278,14 @@ if(isset($_GET['accuracy'])){
 							var accuracyString = '<br/>Accuracy : ' + markers[i].accuracy + ' m';
 							var headingString = "";
 							var velocityString = "";
+							var tracker_idString = '<br/>Owner : ' + markers[i].tracker_id;
+							
 							if(markers[i].heading != null) headingString = '<br/>Heading : ' + markers[i].heading + ' °';
 							if(markers[i].velocity != null) velocityString = '<br/>Velocity : ' + markers[i].velocity + ' km/h';
 
 							removeString = "<br/><br/><a href='javascript:removeMarker("+ i +");'>Delete</a>";
 
-							popupString = dateString + accuracyString + headingString + velocityString + removeString;
+							popupString = dateString + accuracyString + headingString + tracker_idString + velocityString + removeString;
 
 					   		my_marker = L.marker( [markers[i].latitude, markers[i].longitude] ).bindPopup(popupString);
 
